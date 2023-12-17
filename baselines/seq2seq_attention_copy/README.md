@@ -11,6 +11,8 @@ This code is based on Google seq2seq v0.1 and the code by Catherine Finegan-Doll
 - numpy: 1.13.3 
 - matplotlib: 2.1.0
 
+We used a conda environment in GCP installing the above versions to get it to work.
+
 ## Folder Structure
 
 - `bin/` contains entry point to the model including train.py and infer.py, and other tool codes
@@ -25,7 +27,7 @@ This code is based on Google seq2seq v0.1 and the code by Catherine Finegan-Doll
 
 Download `glove.6B.100d.txt` in `data/glove/`.
 
-Put the original data in the folder 
+We split the original data (Data splitting ipynb) in a 50:50 ratio to create data and data_radn_split which we put in the respective folders as below:
 
 ```
 data/datasets/data             
@@ -39,7 +41,7 @@ data/datasets/data_processed
 data/datasets/data_radn_split_processed
 ```
 
-by changing the `infiles` and `prefix` variables in `data/pre_process/utils.py`, and use `data/pre_process/generate_vocab.py` to generate processed data.
+by changing the `infiles` and `prefix` variables in `data/pre_process/utils.py`, and use `data/pre_process/generate_vocab.py` to point to the correct paths
 
 
 #### 1.2  Configuration yaml
@@ -53,7 +55,7 @@ We run 6 experiments. The configuration yaml files are in `experimental_configs`
 - `attn_tune_data_radn_split.yaml` # attention, data_radn_split
 - `basic_tune_data.yaml` # basic, data
 
-In the configuration yaml files, change the data directotries:
+In the configuration yaml files, change the data directories (not requiredif above step is done as is):
 
 - `data_directories`: `data/datasets/data_processed/`
 - `embedding.file`: `data/glove/glove.6B.100d.txt`
@@ -98,9 +100,8 @@ with the following outputs:
 
 ## 3. Evaluation
 
-Note before evaluation, need to replace all ' . ' in the output, then compare the result with the 
-datasets/ [processed dataset name] / [data split] / [data split] _decode.txt
+Before evaluation, we need to format the gold and predicted file data (Create Evaluation Data ipynb) so that it matches the expectation, then we compare the result with the datasets/ [processed dataset name] / [data split] / [data split] _decode.txt
 
 ## Contact
 
-Dongxu Wang, Rui Zhang
+Dongxu Wang, Rui Zhang, Shwetha Subramanian
