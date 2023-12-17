@@ -1,5 +1,5 @@
-## We have adapted this code largely from the Spider repository. We used the Spider dataset, randomized the data and did a 80-20 train-test data.
-
+### We have adapted this code largely from the Spider repository. We used the Spider dataset, randomized the data and did a 80-20 train-test data.
+### The code for DAIL SQL is in the DAIL SQL folder and it includes a README. It is adapted from the DAIL SQL repository. To run it an openai API key is required and the script to run it is run_dail_sql.sh
 # Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task
 
 Spider is a large human-labeled dataset for complex and cross-domain semantic parsing and text-to-SQL task (natural language interfaces for relational databases). It is released along with our EMNLP 2018 paper: [Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task](https://arxiv.org/abs/1809.08887). This repo contains all code for evaluation, preprocessing, and all baselines used in our paper. Please refer to [the task site](https://yale-lily.github.io/spider) for more general introduction and the leaderboard.
